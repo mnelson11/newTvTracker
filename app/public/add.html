@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>TV TRACKER</title>
+
+		<!-- Bootstrap CSS & JS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		
+		<div class="container">
+
+			<div class="jumbotron">
+				<h1>TV TRACKER</h1>
+				<hr>
+				<a href="/" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Search Shows</a>
+				<a href="/add" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-plus"></span> Add New Show</a>
+				<a href="/all" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-th-list"></span> All Shows</a>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><strong>Add Show</strong></h3>
+						</div>
+
+						<div class="panel-body">
+							<form action="" method="POST" role="form">
+								<div class="form-group">
+									<label for="">Show Title</label>
+									<input type="text" class="form-control" id="Title" placeholder="">
+								</div>
+								<div class="form-group">
+									<label for="">Network</label>
+									<input type="text" class="form-control" id="Network" placeholder="">
+								</div>
+								<div class="form-group">
+									<label for="">Genre</label>
+									<input type="text" class="form-control" id="Genre" placeholder="">
+								</div>
+								<div class="form-group">
+									<label for="">Episodes</label>
+									<input type="number" class="form-control" id="Episodes" placeholder="">
+								</div>
+							</form>
+							<br>
+							<div class="text-right">
+								<button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-show"></span> Add a Show</button>
+							</div>
+						</div> 
+
+					</div>
+				</div>			
+			</div>
+
+		</div>
+
+	<!-- Custom Script -->
+	<script src="js/add.js" type="text/javascript"></script>
+	</body>
+</html>
