@@ -19,13 +19,20 @@
 		
 		<div class="container">
 
-			<div class="jumbotron box">
-				<div class=mainHeader>TV TRACKER</div>
-				<hr>
-				<a href="/" class="btn  btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Search Shows</a>
-				<a href="/add" class="btn btn-lg"><span class="glyphicon glyphicon-plus"></span> Add New Show</a>
-				<a href="/all" class="btn  btn-lg"><span class="glyphicon glyphicon-th-list"></span> All Shows</a>
+			<div class="row box">
+				<div class = "col-md-1 icon">
+					<img src="../images/tv-xxl.png" alt="TV" style="width:100%;">
+				</div>
+				<div class =col-md-4>
+					<div class=mainHeader>TV TRACKER</div>
+				</div>
+				<div class =col-md-7>
+					<a href="/" class="btn btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Search Shows</a>
+					<a href="/add" class="btn  btn-lg"><span class="glyphicon glyphicon-plus"></span> Add New Show</a>
+					<a href="/all" class="btn  btn-lg"><span class="glyphicon glyphicon-th-list"></span> All Shows</a>
+				</div>
 			</div>
+			<br>
 
 			<div class="row">
 				<div class="col-lg-12">
@@ -34,7 +41,7 @@
 							<h3 class="panel-title"><strong>Add Show</strong></h3>
 						</div>
 
-						<div class="panel-body">
+						<div class="panel-body black">
 							<form action="" method="POST" role="form">
 								<div class="form-group">
 									<label for="">Show Title</label>
@@ -55,7 +62,7 @@
 							</form>
 							<br>
 							<div class="text-right">
-								<button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-show"></span> Add a Show</button>
+								<button type="submit" class="btn btn-md" id="add-btn"><span class="glyphicon glyphicon-show"></span> Add a Show</button>
 							</div>
 						</div> 
 
