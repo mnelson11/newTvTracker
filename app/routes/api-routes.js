@@ -64,6 +64,7 @@ module.exports = function(app) {
       Title: req.body.Title,
       Network: req.body.Network,
       Genre: req.body.Genre,
+      Episodes_Watched: req.body.Episodes_Watched,
       Episodes: req.body.Episodes
     });
 
@@ -71,7 +72,12 @@ module.exports = function(app) {
 
   });
 
-
+app.post("/api/addepisode", function(req, res) {
+  console.log("Episode watched!");
+  console.log(req.body);
+  Show.increment({Episodes_Watched: req.body.Episodes_Watched}, {where: {id: req.body.id}});
+  
+});
 
   // Delete a Show
   app.post("/api/delete", function(req, res) {

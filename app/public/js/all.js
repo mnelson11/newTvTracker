@@ -1,7 +1,8 @@
-
+var j = 0  
 // Make a get request to our api route that will return every show
 
 $.get("/api/all", function(data) {
+
   // For each show
    //that our server sends us back
   for (var i = 0; i < data.length; i++) {
@@ -20,6 +21,44 @@ $.get("/api/all", function(data) {
     $("#show-well-" + i).append("<h2>" + (i + 1) + ". " + data[i].Title + "</h2>");
     $("#show-well-" + i).append("<h3>Network: " + data[i].Network + "</h4>");
     $("#show-well-" + i).append("<h3>Genre: " + data[i].Genre + "</h4>");
-    $("#show-well-" + i).append("<h3>Episodes: " + data[i].Episodes + "</h4>");
+    $("#show-well-" + i).append("<h4>Episodes: " + data[i].Episodes_Watched + "/" + data[i].Episodes + "</h4>");
+    $("#show-well-" + i).append("<button class='watch-episode' episode-data='" + data[i].id + "'>+</button")
+    //$("#show-well-" + i).append("<button class='delete-episode' delete-episode-data='" + data[i].id + "'>-</button")
+    $("#show-well-" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
+
+    $(".watch-episode").click(function(){
+      
+      j++
+      console.log(j);
+      var info = {
+        id: $(this).attr("episode-data"),
+        Episodes_Watched: j
+      };
+
+      $.post("/api/addepisode", info)
+      .done(function(addEpisode) {
+        console.log(addEpisode);
+        console.log("Episode Watched Successfully!");
+      })
+      location.reload();
+    });
+
+    $(".delete").click(function() {
+     
+      var info = {
+        id: $(this).attr("data-id")
+      };
+
+      $.post("/api/delete", info)
+        // On success, run the following code
+        .done(function(deldata) {
+          // Log the data we found
+          console.log(deldata);
+          console.log("Deleted Successfully!");
+        });
+
+      $(this).closest("div").remove();
+
+    });
   }
 });

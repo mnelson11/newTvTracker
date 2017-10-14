@@ -65,6 +65,8 @@ function renderShows(data) {
       div.append("<p>Network: " + data[i].Network + "</p>");
       div.append("<p>Genre: " + data[i].Genre + "</p>");
       div.append("<p>Episodes: " + data[i].Episodes + "</p>");
+      div.append("<button class='watch-episode' data-id='" + data[i].Episodes_Watched + "'>+</button");
+      div.append("<button class='delete-episode' data-id='" + data[i].Episodes_Watched + "'>-</button");
       div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
 
       $("#stats").append(div);
@@ -72,7 +74,7 @@ function renderShows(data) {
     }
 
     $(".delete").click(function() {
-
+     
       var info = {
         id: $(this).attr("data-id")
       };

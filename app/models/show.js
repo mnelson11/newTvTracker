@@ -17,6 +17,10 @@ var Show = sequelize.define("show", {
   Genre: {
     type: Sequelize.STRING
   },
+  Episodes_Watched: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0
+  },
   Episodes: {
     type: Sequelize.INTEGER
   }
