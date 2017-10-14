@@ -23,7 +23,7 @@ $.get("/api/all", function(data) {
     $("#show-well-" + i).append("<h3>Genre: " + data[i].Genre + "</h4>");
     $("#show-well-" + i).append("<h4>Episodes: " + data[i].Episodes_Watched + "/" + data[i].Episodes + "</h4>");
     $("#show-well-" + i).append("<button class='watch-episode' data-episode='" + data[i].id + "' data-episode-watched='" + data[i].Episodes_Watched + "'>+</button")
-    //$("#show-well-" + i).append("<button class='delete-episode' delete-episode-data='" + data[i].id + "'>-</button")
+    $("#show-well-" + i).append("<button class='delete-episode' data-episode='" + data[i].id + "' data-episode-deleted='" + data[i].Episodes_Watched + "'>-</button")
     $("#show-well-" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
 
     
@@ -31,17 +31,34 @@ $.get("/api/all", function(data) {
 
   $(".watch-episode").click(function(){
       
-      var episodeWatched = parseInt($(this).data("episode-watched")) + 1;
+      //var episodeWatched = parseInt($(this).data("episode-watched")) + 1;
 
       var info = {
         id: $(this).data("episode"),
-        Episodes_Watched: episodeWatched
+        //Episodes_Watched: episodeWatched
       };
 
       $.post("/api/addepisode", info)
       .done(function(addEpisode) {
         console.log(addEpisode);
         console.log("Episode Watched Successfully!");
+      })
+      location.reload();
+    });
+
+   $(".delete-episode").click(function(){
+      
+     // var episodeWatched = parseInt($(this).data("episode-deleted")) - 1;
+
+      var info = {
+        id: $(this).data("episode"),
+        //Episodes_Watched: episodeWatched
+      };
+
+      $.post("/api/deleteepisode", info)
+      .done(function(deleteEpisode) {
+        console.log(deleteEpisode);
+        console.log("Episode Deleted Successfully!");
       })
       location.reload();
     });
