@@ -1,6 +1,3 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
 
 // Dependencies
 var Sequelize = require("sequelize");
