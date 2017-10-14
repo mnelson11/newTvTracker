@@ -75,7 +75,7 @@ module.exports = function(app) {
 app.post("/api/addepisode", function(req, res) {
   console.log("Episode watched!");
   console.log(req.body);
-  Show.increment({Episodes_Watched: req.body.Episodes_Watched}, {where: {id: req.body.id}});
+  Show.increment("Episodes_Watched", {where: {id: req.body.id}});
   
 });
 

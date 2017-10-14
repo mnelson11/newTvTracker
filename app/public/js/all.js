@@ -1,4 +1,4 @@
-var j = 0  
+ 
 // Make a get request to our api route that will return every show
 
 $.get("/api/all", function(data) {
@@ -22,17 +22,20 @@ $.get("/api/all", function(data) {
     $("#show-well-" + i).append("<h3>Network: " + data[i].Network + "</h4>");
     $("#show-well-" + i).append("<h3>Genre: " + data[i].Genre + "</h4>");
     $("#show-well-" + i).append("<h4>Episodes: " + data[i].Episodes_Watched + "/" + data[i].Episodes + "</h4>");
-    $("#show-well-" + i).append("<button class='watch-episode' episode-data='" + data[i].id + "'>+</button")
+    $("#show-well-" + i).append("<button class='watch-episode' data-episode='" + data[i].id + "' data-episode-watched='" + data[i].Episodes_Watched + "'>+</button")
     //$("#show-well-" + i).append("<button class='delete-episode' delete-episode-data='" + data[i].id + "'>-</button")
     $("#show-well-" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
 
-    $(".watch-episode").click(function(){
+    
+  }
+
+  $(".watch-episode").click(function(){
       
-      j++
-      console.log(j);
+      var episodeWatched = parseInt($(this).data("episode-watched")) + 1;
+
       var info = {
-        id: $(this).attr("episode-data"),
-        Episodes_Watched: j
+        id: $(this).data("episode"),
+        Episodes_Watched: episodeWatched
       };
 
       $.post("/api/addepisode", info)
@@ -60,5 +63,4 @@ $.get("/api/all", function(data) {
       $(this).closest("div").remove();
 
     });
-  }
 });
