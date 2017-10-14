@@ -22,8 +22,14 @@ $.get("/api/all", function(data) {
     $("#show-well-" + i).append("<h3>Network: " + data[i].Network + "</h4>");
     $("#show-well-" + i).append("<h3>Genre: " + data[i].Genre + "</h4>");
     $("#show-well-" + i).append("<h4>Episodes: " + data[i].Episodes_Watched + "/" + data[i].Episodes + "</h4>");
-    $("#show-well-" + i).append("<button class='watch-episode' data-episode='" + data[i].id + "' data-episode-watched='" + data[i].Episodes_Watched + "'>+</button")
-    $("#show-well-" + i).append("<button class='delete-episode' data-episode='" + data[i].id + "' data-episode-deleted='" + data[i].Episodes_Watched + "'>-</button")
+    
+    var incrementDisabled = data[i].Episodes === data[i].Episodes_Watched;
+    
+    $("#show-well-" + i).append("<button class='watch-episode' data-episode='" + data[i].id + "' data-episode-watched='" + data[i].Episodes_Watched + "' " + (incrementDisabled ? "disabled":"") + " >+</button");
+    
+    var decrementDisabled = data[i].Episodes_Watched === 0;
+
+    $("#show-well-" + i).append("<button class='delete-episode' data-episode='" + data[i].id + "' data-episode-deleted='" + data[i].Episodes_Watched + "' " + (decrementDisabled ? "disabled":"") + " >-</button");
     $("#show-well-" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
 
     
