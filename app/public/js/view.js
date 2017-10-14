@@ -64,14 +64,48 @@ function renderShows(data) {
       div.append("<h2>" + data[i].Title + "</h2>");
       div.append("<p>Network: " + data[i].Network + "</p>");
       div.append("<p>Genre: " + data[i].Genre + "</p>");
-      div.append("<p>Episodes: " + data[i].Episodes + "</p>");
-      div.append("<button class='watch-episode' data-id='" + data[i].Episodes_Watched + "'>+</button");
-      div.append("<button class='delete-episode' data-id='" + data[i].Episodes_Watched + "'>-</button");
+      div.append("<p>Episodes: " + data[i].Episodes_Watched + "/" + data[i].Episodes + "</p>");
+      div.append("<button class='watch-episode' data-episode='" + data[i].id + "' data-episode-watched='" + data[i].Episodes_Watched + "'>+</button");
+      div.append("<button class='delete-episode' data-episode='" + data[i].id + "' data-episode-deleted'" + data[i].Episodes_Watched + "'>-</button");
       div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE SHOW</button>");
 
       $("#stats").append(div);
 
     }
+
+    $(".watch-episode").click(function(){
+      
+      //var episodeWatched = parseInt($(this).data("episode-watched")) + 1;
+
+      var info = {
+        id: $(this).data("episode"),
+        //Episodes_Watched: episodeWatched
+      };
+
+      $.post("/api/addepisode", info)
+      .done(function(addEpisode) {
+        console.log(addEpisode);
+        console.log("Episode Watched Successfully!");
+      })
+      location.reload();
+    });
+
+   $(".delete-episode").click(function(){
+      
+     // var episodeWatched = parseInt($(this).data("episode-deleted")) - 1;
+
+      var info = {
+        id: $(this).data("episode"),
+        //Episodes_Watched: episodeWatched
+      };
+
+      $.post("/api/deleteepisode", info)
+      .done(function(deleteEpisode) {
+        console.log(deleteEpisode);
+        console.log("Episode Deleted Successfully!");
+      })
+      location.reload();
+    });
 
     $(".delete").click(function() {
      

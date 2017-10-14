@@ -75,9 +75,25 @@ module.exports = function(app) {
 app.post("/api/addepisode", function(req, res) {
   console.log("Episode watched!");
   console.log(req.body);
-  Show.increment("Episodes_Watched", {where: {id: req.body.id}});
-  
+  Show.findById(req.body.id).then(show => {
+    return show.increment('Episodes_Watched', {by: 1})
+  }).then(function(show) {
+    res.json(show);
+  })
 });
+
+app.post("/api/deleteepisode", function(req, res) {
+  console.log("Episode deleted!");
+  console.log(req.body);
+ Show.findById(req.body.id).then(show => {
+  return show.decrement('Episodes_Watched', {by: 1})
+}).then(function(show) {
+  res.json(show);
+  })
+});
+ // Show.decrement("Episodes_Watched", {where: {id: req.body.id}}).then(function (){
+  //res.status(200);
+
 
   // Delete a Show
   app.post("/api/delete", function(req, res) {
