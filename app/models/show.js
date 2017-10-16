@@ -11,21 +11,47 @@ var Show = sequelize.define("show", {
   Title: {
     type: Sequelize.STRING,
     allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: "Title is a required field"
+      }
+    },
   },
   Network: {
     type: Sequelize.STRING,
     allowNull: false,
+      validate: {
+      notEmpty: {
+        msg: "Network is a required field"
+      }
+    },
   },
   Genre: {
     type: Sequelize.STRING,
     allowNull: false,
+      validate: {
+      notEmpty: {
+        msg: "Genre is a required field"
+      }
+    },
   },
   Episodes_Watched: {
     type: Sequelize.INTEGER,
     defaultValue: 0,
+      validate: {
+      notEmpty: {
+        msg: "Episodes Watched is a required field"
+      }
+    },
   },
   Episodes: {
     type: Sequelize.INTEGER,
+    allowNull: false,
+      validate: {
+      notEmpty: {
+        msg: "Episodes is a required field"
+      }
+    },
   }
 }, {
   timestamps: false

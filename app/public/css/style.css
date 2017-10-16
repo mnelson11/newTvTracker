@@ -1,18 +1,7 @@
-body{
+html, body{
 	color:white;
 	background:black;
-}
-
-.mainHeader{
-	font-family: 'Monoton', cursive;
-	font-size: 50px;
-	text-decoration: underline;
-	margin-top: 10px;
-}
-
-.box{
-	color:white;
-	background: black;
+	height: 100%;
 }
 
 .btn{
@@ -20,24 +9,70 @@ body{
 	color:white;
 	font-weight: bold;
 	font-size: 20px;
-	margin-top: 20px;
-	
-/*	margin-right: 15px
-*/
 }
 
 .btn:hover{
 	color:lime;
+	font-weight: bold;
+	font-size: 20px;
+}
+.navbar{
+	background: black;
 }
 
-.black{
+.mainHeader{
+	font-family: 'Monoton', cursive;
+	font-size: 50px;
+	text-decoration: underline;
+	margin-top: 10px;
+	color: white;
+}
+
+.title{
+	font-size: 60px;
+	color:lime;	
+	font-family: 'Mukta', sans-serif;
+}
+.showResult{
+	font-size: 25px;
+	color: white;
+	background: black;
+	font-family: 'Mukta', sans-serif;
+	
+}
+.well{
+	margin-top: 10px;
+	padding-left: 10px;
+	color:white;
+	font-weight: bold;
+	border:dashed lime 2px;
+
+}
+
+.control{
+	margin-top:20px;
+	margin-right: 50px;
+	margin-left: 50px;
+
+}
+.button{
+	background-color:lime;
 	color:black;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: 'Mukta', sans-serif;
 }
 
-.icon{
-	margin-top: 5px;
+.button:hover{
+	background:black;
+	color:lime;
+	font-size: 20px;
+	font-family: 'Mukta', sans-serif;
 }
 
-.black{
-	color:black;
+.subHeader{
+	color:white;
+	font-weight: bold;
+	font-size: 25px;
+	font-family: 'Mukta', sans-serif;
 }

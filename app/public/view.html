@@ -1,100 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-
-		<meta charset="UTF-8">
-		<title>TV TRACKER</title>
-
-		<!-- Bootstrap CSS & JS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<!-- jQuery -->
+		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>TV TRACKER</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  	<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards" rel="stylesheet">
-
 	</head>
 	<body>
 		
-		<div class="container box">
-			<div class="row box">
-				<div class = "col-md-1 icon">
-					<img src="/images/tv-xxl.png" alt="TV" style="width:100%;">
-				</div>
-				<div class =col-md-4>
-					<div class=mainHeader>TV TRACKER</div>
-				</div>
-				<div class =col-md-7>
-					<a href="/" class="btn btn-lg"><span class="glyphicon glyphicon-search"></span> Search Shows</a>
-					<a href="/add" class="btn  btn-lg"><span class="glyphicon glyphicon-plus"></span> Add New Show</a>
-					<a href="/all" class="btn  btn-lg"><span class="glyphicon glyphicon-th-list"></span> All Shows</a>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-
-				<div class="col-lg-12">
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title"><strong>Show Search</strong></h3>
-						</div>
-						<div class="panel-body">
-							<input type="text" id="show-search" class="form-control" >
-							<br>
-							<div class="text-right">
-								<button class="btn  btn-md" id="search-btn"><span class="glyphicon glyphicon-search"></span>Search</button>
-							</div>
-						</div>
-					</div>
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+	  		<div class="navbar-brand">
+	  			
+				<a class="navbar-item" >
+      				<img src="/images/tv-xxl.png" alt="TV" height="300" style="background: black">
+    			</a>
+	  			<div class = "navbar-item mainHeader">TV TRACKER</div></div>
+		  		<div class=navbar-item>
+		  			<a href="/search" class="btn btn-lg"></span> Search Shows</a>
+		  		</div>
+		  		<div class=navbar-item>
+		  			<a href="/add" class="btn  btn-lg"></span> Add New Show</a>
+		  		</div>
+				<div class=navbar-item>
+		  			<a href="/all" class="btn  btn-lg"></span> All Shows</a>
+		  		</div>		
+	  		</div>
+		</nav>
 
 
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title"><strong>Network Search</strong></h3>
-						</div>
-						<div class="panel-body">
-							<input type="text" id="network-search" class="form-control">
-							<br>
-							<div class="text-right">
-								<button class="btn  btn-md" id="network-search-btn"><span class="glyphicon glyphicon-search"></span>Search</button>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title"><strong>Genre Search</strong></h3>
-						</div>
-						<div class="panel-body">
-							<input type="text" id="genre-search" class="form-control">
-							<br>
-							<div class="text-right">
-								<button class="btn  btn-md" id="genre-search-btn"><span class="glyphicon glyphicon-search"></span> Search</button>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="panel panel-default black">
-						<div class="panel-heading">
-							<h3 class="panel-title"><strong>Show Search Results</strong></h3>
-						</div>
-						<div class="panel-body">
-							<div class="well" id="stats" hidden="true">
-								<h2 id="Title"></h2>
-								<div>
-									<h3><strong>Network:</strong> <span id="Network"></span></h3>
-									<h3><strong>Genre:</strong> <span id="Genre"></span></h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>			
-			</div>
+		<div class="field is-grouped">
+		  <p class="control is-expanded">
+		    <input class="input" id="show-search" type="text" placeholder="Title Search">
+		  </p>
+		  <p class="control">
+		    <a class="button " id="search-btn">
+		      Search
+		    </a>
+		  </p>
 		</div>
+
+		<div class="field is-grouped">
+		  <p class="control is-expanded">
+		    <input class="input" type="text" id="network-search" placeholder="Network Search">
+		  </p>
+		  <p class="control">
+		    <a class="button " id="network-search-btn">
+		      Search
+		    </a>
+		  </p>
+		</div>
+	
+		<div class="field is-grouped">
+		  <p class="control is-expanded">
+		    <input class="input" type="text" id="genre-search" placeholder="Genre Search">
+		  </p>
+		  <p class="control">
+		    <a class="button " id="genre-search-btn"  id="show-search">
+		      Search
+		    </a>
+		  </p>
+		</div>
+
+		<section class="hero">
+		  <div class="hero-body">
+		    <div class="container">
+		    	<div class=subHeader>Results</div>
+				<div class="well" id="stats" hidden="true">
+					<h2 id="Title"><strong>Title:</strong> </h2>
+					<div >
+						<h3><strong>Network:</strong> <span id="Network"></span></h3>
+						<h3><strong>Genre:</strong> <span id="Genre"></span></h3>
+					</div>
+				</div>
+		    </div>
+		  </div>
+		</section>
+		
+
+
+
 
 	<!-- Custom Script -->
 	<script src="js/view.js" type="text/javascript"></script>
