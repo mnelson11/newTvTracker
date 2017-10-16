@@ -9,20 +9,23 @@ var sequelize = require("../config/connection.js");
 // Creates a "Show" model that matches up with DB
 var Show = sequelize.define("show", {
   Title: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false,
   },
   Network: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false,
   },
   Genre: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull: false,
   },
   Episodes_Watched: {
     type: Sequelize.INTEGER,
-    defaultValue: 0
+    defaultValue: 0,
   },
   Episodes: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
   }
 }, {
   timestamps: false

@@ -65,10 +65,8 @@ module.exports = function(app) {
       Network: req.body.Network,
       Genre: req.body.Genre,
       Episodes_Watched: req.body.Episodes_Watched,
-      Episodes: req.body.Episodes
+      Episodes: req.body.Episodes,
     });
-
-
 
   });
 
@@ -91,8 +89,6 @@ app.post("/api/deleteepisode", function(req, res) {
   res.json(show);
   })
 });
- // Show.decrement("Episodes_Watched", {where: {id: req.body.id}}).then(function (){
-  //res.status(200);
 
 
   // Delete a Show
