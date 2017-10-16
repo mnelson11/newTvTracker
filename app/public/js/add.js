@@ -1,6 +1,44 @@
-// The code in add.js handles what happens when the user clicks the "Add a book" button.
 
 // When user clicks add-btn
+
+// object.onkeyup = function(){
+//         var a=document.getElementById("Title").value;
+//         var b=document.getElementById("Network").value;
+//         var c=document.getElementById("Genre").value;
+//         var d=document.getElementById("Episodes").value;
+//         if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
+//         {
+//             return false; 
+            
+//        }
+
+        
+        
+//    }
+
+   // if(validate === false)
+   // {
+   //    $('#add-btn').attr('disabled', 'disabled');
+   //  }else {
+   //          $('#add-btn').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+   //      }
+        
+document.onkeyup = function()
+{
+        var a=document.getElementById("Title").value;
+        var b=document.getElementById("Network").value;
+        var c=document.getElementById("Genre").value;
+        var d=document.getElementById("Episodes").value;
+        
+        if (a !== null && b !== null && c !== null && d !== null)
+          {
+          $('#add-btn').attr("disabled", false); 
+        
+        if {b !=null
+           $('#add-btn').attr('disabled', true);  
+         }
+    }
+
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
 
@@ -11,6 +49,12 @@ $("#add-btn").on("click", function(event) {
     Genre: $("#Genre").val().trim(),
     Episodes: $("#Episodes").val().trim()
   };
+
+
+
+
+
+ 
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newShow)
@@ -27,3 +71,4 @@ $("#add-btn").on("click", function(event) {
   $("#Episodes").val("");
 
 });
+
