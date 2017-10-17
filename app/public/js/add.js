@@ -1,28 +1,5 @@
 
-// When user clicks add-btn
 
-// object.onkeyup = function(){
-//         var a=document.getElementById("Title").value;
-//         var b=document.getElementById("Network").value;
-//         var c=document.getElementById("Genre").value;
-//         var d=document.getElementById("Episodes").value;
-//         if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
-//         {
-//             return false; 
-            
-//        }
-
-        
-        
-//    }
-
-   // if(validate === false)
-   // {
-   //    $('#add-btn').attr('disabled', 'disabled');
-   //  }else {
-   //          $('#add-btn').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
-   //      }
-        
 document.onkeyup = function()
 {
         var a=document.getElementById("Title").value;
@@ -30,14 +7,28 @@ document.onkeyup = function()
         var c=document.getElementById("Genre").value;
         var d=document.getElementById("Episodes").value;
         
-        if (a !== null && b !== null && c !== null && d !== null)
-          {
-          $('#add-btn').attr("disabled", false); 
-        
-        if {b !=null
-           $('#add-btn').attr('disabled', true);  
-         }
-    }
+        console.log(b);
+
+        {$('#add-btn').removeAttr('disabled');}
+
+        if(a === "" || a ===undefined)
+        {$('#add-btn').attr('disabled', 'disabled');
+        } 
+        if(b === "" || b ===undefined)
+        {$('#add-btn').attr('disabled', 'disabled');
+        } 
+        if(c === "" || c ===undefined)
+        {$('#add-btn').attr('disabled', 'disabled');
+        } 
+        if(d === "" || d ===undefined)
+        {$('#add-btn').attr('disabled', 'disabled');
+        } 
+
+
+
+  }
+
+
 
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
@@ -50,11 +41,6 @@ $("#add-btn").on("click", function(event) {
     Episodes: $("#Episodes").val().trim()
   };
 
-
-
-
-
- 
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newShow)
