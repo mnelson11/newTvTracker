@@ -50,17 +50,8 @@ $.get("/api/all", function(data) {
         console.log("Episode Watched Successfully!");
       })
       location.reload();
-    
-    function getEpisodes() {
-    $.get("/api/todos", function(data) {
-      todos = data;
-      initializeRows();
-    });
-  }
 
     });
-
-
 
    $(".delete-episode").click(function(){
       
