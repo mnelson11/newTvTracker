@@ -51,8 +51,8 @@ html, body{
 
 .control{
 	margin-top:20px;
-	margin-right: 50px;
-	margin-left: 50px;
+	margin-right: 75px;
+	margin-left: 75px;
 
 }
 .button{
@@ -83,4 +83,9 @@ input:invalid {
 
 input:valid {
   border: 5px solid lime;
+}
+
+.field{
+	margin-right: 75px;
+	margin-left: 75px;
 }
